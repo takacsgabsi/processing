@@ -42,12 +42,12 @@ class Felho {
   
   void keletkezz(){
     x=random(0,500);
-    y=random(0, 500);
+    y=random(0,500);
     r=random(30,300);
   }
     
  void latszodj(){
-  fill(#FFFFFF);
+  fill(#2C2AB7);
   stroke(2);
   ellipse(x,y,r,r/3);
  }
@@ -85,19 +85,28 @@ void setup() {
   csillagok[1].szuless();
   
   int szamlalo=0;
-while(szamlalo<3){
-  felhok[szamlalo]= new Felho();
-  felhok[szamlalo].keletkezz();
-  szamlalo=szamlalo+1;
-}
-
 
 while(szamlalo<1000){
   csillagok[szamlalo]= new Csillag();
   csillagok[szamlalo].szuless();
   szamlalo=szamlalo+1;
 }
-  
+  szamlalo=0;
+  while(szamlalo<3){
+  felhok[szamlalo]= new Felho();
+ felhok[szamlalo].keletkezz();
+  szamlalo=szamlalo+1;
+}
+//for (int i=0; i<1000; i=i+1){
+ // csillagok[i]= new Csillag();
+ // csillagok[i].szuless();
+//}
+
+//for (int i=0;1<3; i=i+1){
+ // felhok[i]= new Felho();
+ // felhok[i].keletkezz();
+//}
+
   hold.x=50;
   hold.y=75;
   hold.r=40;
@@ -117,14 +126,23 @@ void draw() {
   felho.ussz();
   
   
-  int szamlalo=0;
-while(szamlalo<1000){
-  csillagok[szamlalo].ragyogj();
-  szamlalo=szamlalo+1;
+//  int szamlalo=0;
+//while(szamlalo<1000){
+  //csillagok[szamlalo].ragyogj();
+ // szamlalo=szamlalo+1;
+//}
+//szamlalo=0;
+//while(szamlalo<3){
+//  felhok[szamlalo].ussz();
+ // szamlalo=szamlalo+1;
+//}
+
+for(int i=0;i<3; i=i+2){
+  felhok[i].ussz();
+  felhok[i].latszodj();
 }
-while(szamlalo<3){
-  felhok[szamlalo].keletkezz();
-  szamlalo=szamlalo+1;
+for(int i=0;i<1000; i=i+1){
+  csillagok[i].ragyogj();
 }
 
   }
