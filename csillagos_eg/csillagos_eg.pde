@@ -14,7 +14,9 @@ while(szamlalo<1000){
   szamlalo=szamlalo+1;
   x=random(0,500);
   y=random(0,500);
-  ellipse(x,y,3,3);
+  noStroke();
+  ellipse(x,y,15,15);
+  fill(x,255,y);
   
  
 
